@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Pytest
+.pytest_cache/
+
+# Ruff / tools
+.ruff_cache/
+
+# SQLite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
