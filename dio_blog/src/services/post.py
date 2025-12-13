@@ -1,8 +1,8 @@
 from databases.interfaces import Record
-from dio_blog.src.database import database
-from dio_blog.src.models.post import posts
-from dio_blog.src.exceptions import NotFoundPostError
-from dio_blog.src.schemas.post import PostIn, PostUpdateIn
+from database import database
+from models.post import posts
+from exceptions import NotFoundPostError
+from schemas.post import PostIn, PostUpdateIn
 
 class PostService:
     async def read_all(
