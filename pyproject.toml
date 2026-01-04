@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "dio_blog"
+version = "0.1.0"
+description = ""
+authors = ["diegoff <diegoff_@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "*"
+uvicorn = { extras = ["standard"], version = "*" }
+databases = { extras = ["aiosqlite", "asyncpg"], version = "*" }
+asyncpg = "^0.31.0"
+psycopg2-binary = "*"
+pyjwt = "^2.10.1"
+pydantic-settings = "^2.12.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.1"
+pytest-asyncio = "^1.3.0"
+pytest-mock = "^3.15.1"
+httpx = "^0.28.1"
+black = "^25.9.0"
+ruff = "^0.13.3"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
