@@ -1,20 +1,11 @@
 from fastapi import FastAPI, status, Request
-from contextlib import asynccontextmanager
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.database import database, metadata, engine
 from src.controllers import auth, post
 from src.exceptions import NotFoundPostError
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    from src.models.post import posts  # noqa: F401
-    await database.connect()
-    metadata.create_all(engine)
-    yield
-    await database.disconnect()
 
 
 tags_metadata = [
@@ -60,7 +51,6 @@ Você será capaz de:
     openapi_tags=tags_metadata,
     servers=servers,
     redoc_url=None,
-    lifespan=lifespan,
 )
 
 # =========================
